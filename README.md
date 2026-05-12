@@ -104,7 +104,7 @@ Pourquoi l’utilisation de variables dans un playbook nous aides pour plusieurs
 **Question 3 :**  
 En quoi Ansible facilite-t-il la gestion de plusieurs serveurs ?  
   
-*..Répondez à cet exercice ici..*
+>étant donné que la mise en place des serveurs est gérée depuis un `.yml` et que tout est automatique, cela rend la gestion d'un grand nombre de serveurs beaucoup plus facile.
 
 **Question 4 :**  
 Quels sont les avantages et les limites d’Ansible dans un contexte DevOps ?   
