@@ -109,12 +109,18 @@ En quoi Ansible facilite-t-il la gestion de plusieurs serveurs ?
 **Question 4 :**  
 Quels sont les avantages et les limites d’Ansible dans un contexte DevOps ?   
   
-*..Répondez à cet exercice ici..*
+>_Les Avantages d'Ansible :_
+>+ _**Simplicité et lisibilité :** L'utilisation du YAML rend les playbooks compréhensibles._
+>+ _**Rapidité de mise en œuvre :** Rien à installer.
+>+ _**Large écosystème (Ansible Galaxy) :** Il existe des milliers de "Roles" (sorte de bibliothèques) déjà écrits par la communauté pour installer presque n'importe quoi (Docker, Kubernetes, bases de données)._
+>+ _**Idempotence native :**  réduit massivement le risque d'erreurs lors des déploiements répétés._
   
+
 **Question 5 :**  
 Quelle est la différence entre les modules copy et template dans Ansible ?   
   
-*..Répondez à cet exercice ici..*
+>Le module `copy` prend un fichier tel quel sur la machine et le dépose sur le serveur cible. Il ne regarde pas ce qu'il y a à l'intérieur. \
+> alors que Le module `template` utilise le moteur Jinja2. Avant d'envoyer le fichier, Ansible le lit, repère les variables et les remplace par leurs valeurs réelles définies dans le playbook.
 
 ---------------------------------------------------
 Séquence 5 : Atelier  
