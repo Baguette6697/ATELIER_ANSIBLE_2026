@@ -90,8 +90,8 @@ Faites preuve de pédagogie et soyez clair dans vos explications et procedures d
 **Question 1 :**  
 Pourquoi Ansible est-il qualifié d’outil "déclaratif" ?    
   
-  Ansible est déclaratif (et non impératif) car il permet de définir un modèle de configuration (le playbook) qui représente l'état idéal du serveur. C'est ensuite le "moteur" d'Ansible (et ses modules) qui se charge de faire le pont entre l'état actuel du serveur et cet état idéal.
-  Un systeme impératif à l'inverse, nécessite de stipulé toutes les étapes intermédiaire pour arriver à l'état souhaité. 
+  _Ansible est déclaratif (et non impératif) car il permet de définir un modèle de configuration (le playbook) qui représente l'état idéal du serveur. C'est ensuite le "moteur" d'Ansible (et ses modules) qui se charge de faire le pont entre l'état actuel du serveur et cet état idéal.
+  Un systeme impératif à l'inverse, nécessite de stipulé toutes les étapes intermédiaire pour arriver à l'état souhaité._
 
 **Question 2 :**  
 Pourquoi l’utilisation de variables est-elle essentielle dans un playbook ?  
