@@ -90,13 +90,16 @@ Faites preuve de pédagogie et soyez clair dans vos explications et procedures d
 **Question 1 :**  
 Pourquoi Ansible est-il qualifié d’outil "déclaratif" ?    
   
-  _Ansible est déclaratif (et non impératif) car il permet de définir un modèle de configuration (le playbook) qui représente l'état idéal du serveur. C'est ensuite le "moteur" d'Ansible (et ses modules) qui se charge de faire le pont entre l'état actuel du serveur et cet état idéal.
-  Un systeme impératif à l'inverse, nécessite de stipulé toutes les étapes intermédiaire pour arriver à l'état souhaité._
+>_Ansible est déclaratif (et non impératif) car il permet de définir un modèle de configuration (le playbook) qui représente l'état idéal du serveur. C'est ensuite le "moteur" d'Ansible (et ses >modules) qui se charge de faire le pont entre l'état actuel du serveur et cet état idéal.
+>Un systeme impératif à l'inverse, nécessite de stipulé toutes les étapes intermédiaire pour arriver à l'état souhaité._
 
 **Question 2 :**  
-Pourquoi l’utilisation de variables est-elle essentielle dans un playbook ?  
+Pourquoi l’utilisation de variables dans un playbook nous aides pour plusieurs raisons :  
   
-*..Répondez à cet exercice ici..*
+>_L'utilisation de variable est éssentiel pour aider pour plusieurs raisons :_
+>+ _**La maintenabilité :** si il faut changer une variable plus tard, comme l'url du site web ou une date par exemple, il suffira de le modifier à une seule instance._
+>+ _**La réutilisabilité :** Sans variables, le playbook ne servirait qu'à déployer un seul site spécifique sur un seul type de serveur. Grâce aux variables, nous pouvons utiliser le même playbook pour différents projets ou clients. Il suffit de changer le fichier de variables_
+>+ _**La sécrurité :** On peu partager le template à un prestataire par exemple, sans forcément paratager les données sensibles comme des mots de passes ou nom d'utilisateurs._
 
 **Question 3 :**  
 En quoi Ansible facilite-t-il la gestion de plusieurs serveurs ?  
