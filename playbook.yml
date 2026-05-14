@@ -47,6 +47,15 @@
         name: nginx
         state: present
 
+    - name: Configurer le port Nginx
+      template:
+        src: files/nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+        owner: root
+        group: root
+        mode: "0644"
+      notify: Redémarrer nginx
+
     - name: Vérifier que le répertoire web existe
       file:
         path: /var/www/html

@@ -3,3 +3,4 @@ env: "prod"
 author: "Equipe Ops"
 page_title: "SERVEUR DE PRODUCTION"
 app_user: "Admin-Prod"
+nginx_port: 80
