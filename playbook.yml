@@ -50,7 +50,7 @@
     - name: Configurer le port Nginx
       template:
         src: files/nginx.conf.j2
-        dest: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
         owner: root
         group: root
         mode: "0644"
@@ -82,6 +82,9 @@
       service:
         name: nginx
         state: started
+
+    - name: Appliquer les changements de configuration immédiatement
+      meta: flush_handlers
 
     - name: Vérifier que le site répond en HTTP
       uri:
