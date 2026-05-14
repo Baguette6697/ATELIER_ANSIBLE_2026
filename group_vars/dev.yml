@@ -1,0 +1,6 @@
+app_name: "Application DEV"
+env: "dev"
+author: "Etudiant DEV"
+page_title: "Serveur de TEST - {{ app_name }}"
+app_user: "Clement BOUVERET FCC3"
+nginx_port: 8080

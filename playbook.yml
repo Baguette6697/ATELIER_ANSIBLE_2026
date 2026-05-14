@@ -1,6 +1,6 @@
 ---
 - name: Atelier Ansible dans GitHub Codespaces - version durcie avec remédiation
-  hosts: local
+  hosts: all
   become: true
   gather_facts: true
 
@@ -8,11 +8,12 @@
     page_dest: /var/www/html/index.html
     yarn_repo_file: /etc/apt/sources.list.d/yarn.list
     yarn_repo_disabled_file: /etc/apt/sources.list.d/yarn.list.disabled
-    author: Clement BOUVERET (Eleve FCC3)
-    page_title: Serveur deploye avec Ansible
-    app_user: Clement
 
   tasks:
+    - name: "Affichage de l'environnement"
+      debug:
+        msg: "Deploiment de {{ app_name }} en mode {{ env }} par {{ author }}"
+
     - name: Afficher le système cible
       debug:
         msg:
@@ -46,6 +47,15 @@
         name: nginx
         state: present
 
+    - name: Configurer le port Nginx
+      template:
+        src: files/nginx.conf.j2
+        dest: /etc/nginx/sites-enabled/default
+        owner: root
+        group: root
+        mode: "0644"
+      notify: Redémarrer nginx
+
     - name: Vérifier que le répertoire web existe
       file:
         path: /var/www/html
@@ -56,7 +66,7 @@
 
     - name: Déployer la page HTML personnalisée
       template:
-        src: files/index.html
+        src: files/index2.html
         dest: "{{ page_dest }}"
         owner: root
         group: root
@@ -73,9 +83,12 @@
         name: nginx
         state: started
 
+    - name: Appliquer les changements de configuration immédiatement
+      meta: flush_handlers
+
     - name: Vérifier que le site répond en HTTP
       uri:
-        url: http://localhost
+        url: http://localhost:{{ nginx_port }}
         method: GET
         status_code: 200
         return_content: true
