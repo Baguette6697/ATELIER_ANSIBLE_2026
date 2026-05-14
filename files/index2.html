@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>{{ page_title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism Card */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Variables requested */
+        h1 {
+            color: #ee0000; /* Ansible Red */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        /* Fun Ansible Badge */
+        .ansible-badge {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 25px 0;
+            border: 2px solid #ee0000;
+            animation: pulse 2s infinite;
+        }
+
+        /* Info box for the other variables */
+        .info-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: left;
+            border-left: 4px solid #ee0000;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #e0e0e0;
+        }
+
+        .emoji {
+            margin-right: 10px;
+        }
+
+        /* Pulsing Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(238, 0, 0, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(238, 0, 0, 0.3); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(238, 0, 0, 0); }
+        }
+    </style>
 </head>
 <body>
-  <h1>{{ page_title }}</h1>
-  <p>Deploye par : {{ author }}</p>
-  <p>Utilisateur systeme : {{ app_user }}</p>
+
+    <div class="container">
+        <h1>{{ page_title }}</h1>
+        
+        <div class="ansible-badge">
+            🚀 Automatisé avec la magie d'ANSIBLE ! 🚀
+        </div>
+        
+        <p style="color: #b0b0c0; font-style: italic;">
+            Bienvenue sur ce serveur. Si vous lisez ceci, le playbook a fonctionné !
+        </p>
+        
+        <div class="info-box">
+            <p><span class="emoji">👨‍💻</span>Deploye par : <strong>{{ author }}</strong></p>
+            <p><span class="emoji">⚙️</span>Utilisateur systeme : <strong>{{ app_user }}</strong></p>
+        </div>
+    </div>
+
 </body>
 </html>
