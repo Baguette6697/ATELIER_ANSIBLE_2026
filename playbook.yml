@@ -85,7 +85,7 @@
 
     - name: Vérifier que le site répond en HTTP
       uri:
-        url: http://localhost
+        url: http://localhost:{{ nginx_port }}
         method: GET
         status_code: 200
         return_content: true
